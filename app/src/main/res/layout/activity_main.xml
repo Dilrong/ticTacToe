@@ -1,18 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".controller.MainActivity">
+    <GridLayout
+        android:id="@+id/buttonGrid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:columnCount="3"
+        android:rowCount="3">
 
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:tag="00"
+            android:onClick="onCellClicked" />
+        <Button
+            android:tag="01"
+            android:onClick="onCellClicked" />
+        <Button
+            android:tag="02"
+            android:onClick="onCellClicked" />
+        <Button
+            android:tag="10"
+            android:onClick="onCellClicked" />
+        <Button
+            android:tag="11"
+            android:onClick="onCellClicked" />
+        <Button
+            android:tag="12"
+            android:onClick="onCellClicked" />
+        <Button
+            android:tag="20"
+            android:onClick="onCellClicked" />
+        <Button
+            android:tag="21"
+            android:onClick="onCellClicked" />
+        <Button
+            android:tag="22"
+            android:onClick="onCellClicked" />
+    </GridLayout>
+    <LinearLayout
+        android:id="@+id/winnerPlayerViewGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:layout_margin="20dp"
+            android:text="X"/>
+
+        <TextView
+            android:id="@+id/winnerPlayerLabe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="@string/winner"/>
+
+    </LinearLayout>
+
+</LinearLayout>
